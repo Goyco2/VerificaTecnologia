@@ -5,9 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users'); 
-
+const usersRouter = require('./routes/users'); 
+const pagesRouter = require('./routes/pages');
 app.use('/rest', usersRouter);
+
+app.use('/pages', pagesRouter);
 
 
 var app = express();

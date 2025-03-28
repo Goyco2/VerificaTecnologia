@@ -1,0 +1,7 @@
+html
+    head
+        title= user.name.first + " " + user.name.last
+    body
+        h1= user.name.first + " " + user.name.last
+        img(src=user.picture.large)
+        p Email: #{user.email}
