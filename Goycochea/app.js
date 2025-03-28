@@ -31,6 +31,10 @@ app.use('/pages', pagesRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+app.use((req, res) => {
+  res.status(404).send("Pagina non trovata");
+});
+
 
 // error handler
 app.use(function(err, req, res, next) {
