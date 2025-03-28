@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+ const express = require('express');
+const fs = require('fs');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+let users = JSON.parse(fs.readFileSync('users.json'));
+
+router.get('/users', (req, res) => {
+    res.json(users);
 });
 
 module.exports = router;
